@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const PaymentComponent = ({ amount }) => {
+  const [paymentProcessed, setPaymentProcessed] = useState(false);
+
   const handlePayment = () => {
     alert(`Processing payment of $${amount}`);
+    setPaymentProcessed(true);
+    setTimeout(() => setPaymentProcessed(false), 3000); 
   };
 
   return (
@@ -13,6 +17,11 @@ const PaymentComponent = ({ amount }) => {
       >
         Pay Now
       </button>
+      {paymentProcessed && (
+        <p className="mt-2 text-green-700 font-semibold">
+          Payment of ${amount} processed successfully!
+        </p>
+      )}
     </div>
   );
 };

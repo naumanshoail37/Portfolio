@@ -14,7 +14,7 @@ const ProjectForm = ({ onCreateProject }) => {
   };
 
   return (
-    <form className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6 mt-6" onSubmit={handleSubmit}>
+    <form className="bg-white shadow-lg rounded-lg p-6" onSubmit={handleSubmit}>
       <div className="mb-4">
         <label className="block text-gray-700">Project Title</label>
         <input
@@ -23,6 +23,7 @@ const ProjectForm = ({ onCreateProject }) => {
           onChange={(e) => setTitle(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded mt-2"
           placeholder="Enter project title"
+          required
         />
       </div>
       <div className="mb-4">
@@ -32,6 +33,7 @@ const ProjectForm = ({ onCreateProject }) => {
           onChange={(e) => setDescription(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded mt-2"
           placeholder="Enter project description"
+          required
         />
       </div>
       <div className="mb-4">
@@ -42,6 +44,7 @@ const ProjectForm = ({ onCreateProject }) => {
           onChange={(e) => setGoal(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded mt-2"
           placeholder="Enter funding goal"
+          required
         />
       </div>
       <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">
